@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <style>
+        ul {
+            background-color:burlywood;
+            height: 600px ;
+            width: 20%;
+            padding-top: 50px;
+        }
+        .jumbotron {
+          position: absolute;
+          left:0
+        }
+        .search{
+          position: absolute;
+          top:40px;
+          left:400px
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;" class="container">
+
+        <div style="width: 80%;" class="jumbotron">
+            <ul class="nav flex-column">
+                <img src="data:image/jpeg;base64,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" alt="No img">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Transactions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" >Pay</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >Receipts/Bills</a>
+                  </li>        <li class="nav-item">
+                    <a class="nav-link" >Deposit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" >Withdraw</a>
+                  </li>
+              </ul>
+        </div>
+        <div class="search">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form><br><br><br><br>
+          <h5>Know your transactions details here</h5>
+
+          <box>KYC</box>
+
+        </div>
+        <div>
+        </div>
+    </div>
+</body> -->
+<style>
+  .jumbotron {
+      background-color: #f8f9fa;
+      width: 20%;
+      position: fixed;
+      height: 100%;
+      left: 0;
+      padding: 20px;
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  ul img {
+      position: relative;
+      left: 20px;
+      max-height: 150px; 
+      width: auto;
+      max-width: 150px;
+      border-radius: 50%;
+      border: 3px solid rgb(24, 205, 36);
+  }
+  .center {
+      position: relative;
+      margin-left: 25%;
+      padding: 40px;
+  }
+  .user-logo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+  /* Additional styling for search box */
+  .search-box {
+      width: 70%;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+  .search-button {
+      margin-top: 10px;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+
+    <ul class="nav flex-column">
+      <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVRH9yuYVHX-g9OWR8BUU-NLkLVooLCpjtvA&usqp=CAU" alt="">
+      </div>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pay</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Receipts/Bills</a>
+        </li>        
+        <li class="nav-item">
+            <a class="nav-link" href="#">Deposit</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Withdraw</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="center">
+      <div><br><br><br>
+        <form class="d-flex justify-content mt-0" style="margin-top:50px">
+            <input class="form-control"style="width:70%;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form><br><br>
+        <h1>Know your transactions details here</h1><br><br>
+        <div>
+          <h1>KYC Details</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-logo">
+      <!-- <img src="your-image-source" alt="User Logo"> -->
+      <a href=""><ion-icon name="person-circle-outline" style="height: 30px;width:30px"></ion-icon>
+      </a>
+    </div>
+</div>

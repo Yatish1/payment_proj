@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        Card ID : {{credit_card.card_id}} <br><br>
+        Account Name : {{ credit_card.name }} <br><br>
+        Available Balance : <input type="text" name="" value= {{account.account_balance}}> <br><br>
+        Credit Card Amount : <input type="text" name="amount" id=""><br><br>
+        <button type="submit">Pay Bill</button>
+    </form>
+</body>
+</html>
