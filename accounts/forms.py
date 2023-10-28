@@ -12,4 +12,4 @@ class user_form(UserCreationForm):
     class Meta:
         model = User 
         fields = ['username','email','password1','password2']
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
