@@ -1,1 +1,0 @@
-web: gunicorn digipay.wsgi --log -file -
